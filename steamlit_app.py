@@ -15,7 +15,10 @@ cnx=st.connection("snowflake")
 session = cnx.session()
 
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('Fruit_Name'),col('Search_On'))
-st.dataframe(data=my_dataframe, use_container_width=True)
+#st.dataframe(data=my_dataframe, use_container_width=True)
+#st.stop()
+pd_df=mydataframe.to_pandas()
+st.dataframe(pd_df)
 st.stop()
 
 # title = st.text_input('Movie Title','Life of Brain')
